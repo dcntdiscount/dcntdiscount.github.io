@@ -37,10 +37,10 @@
     <p>Станьте гражданином первого в мире<br> блокчейн-государства Decenturion<br> со скидкой 50% от текущей цены.<br><br>Продажа токенов стартапов по самым<br>низким ценам с лендинга официального сапорта.</p>
    </div>
   </div>
-  <a class="main-down" href="#"><i class="icon-down"></i></a>
+  <a class="main-down" href="#vozmozhnosti"><i class="icon-down"></i></a>
  </div>
 
- <div class="vozmozhnosti">
+ <div class="vozmozhnosti" id="vozmozhnosti">
    <div class="container">
      <h2 class="section-header">Возможности</h2>  
      <div class="row">
@@ -59,7 +59,7 @@
      <div class="col-md-4">
        <div class="vozmozhnosti-block">
        <img src="img/vozmozhnosti/3.jpg" alt="Вам нужны услуги ментора?">
-       <a href="#">Вам нужны услуги опытного ментора?</a>
+       <a href="#">Вам нужны услуги ментора?</a>
        </div>
       </div>
     </div>
@@ -89,7 +89,27 @@
  </div>
 </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+     </script>
+    <script>
+    $(document).ready(function() {
+      //навигация - плавный скроллинг к якорю
+      $(".slowly").on("click", function (event) {
+        //отменяем стандартную обработку нажатия по ссылке
+        event.preventDefault();
+        //забираем идентификатор блока с атрибута href
+        var id = $(this).attr('href'),
+        //узнаем высоту от начала страницы до блока, на который ссылается якорь
+        top = $(id).offset().top;
+        //анимируем переход на расстояние - top за 1500мс
+        $('body,html').animate({scrollTop: top}, 800);
+      })
+
+    })
+
+      
+    </script>
+    }
   </body>
 </html>
 
